@@ -1,0 +1,26 @@
+<!--<textarea rows="6">{{newPost}}</textarea>-->
+<!--<textarea rows="6" [value]="newPost" #postInput></textarea>-->
+<!--prpertybinding-->
+
+
+<mat-card>
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+        <mat-form-field>
+            <input matInput type="text" name="title" ngModel required minlength="3" placeholder="Post Title" #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput rows="4" name="content" ngModel required placeholder="Post Content" #content="ngModel"></textarea>
+            <mat-error *ngIf="content.invalid">Please enter a post Content.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit">Save Post</button>
+    </form>
+</mat-card>
+
+
+
+<!-- two way binding -->
+<!--//event binding-->
+<!--<p>{{newPost }}</p>-->
+<!--string intrepolation-->
+<!--These are the core template binding features angular has, event binding, string interpolation, property binding ,twoway binding-->
